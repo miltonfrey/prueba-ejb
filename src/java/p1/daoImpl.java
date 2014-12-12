@@ -6,15 +6,16 @@
 package p1;
 
 import java.io.Serializable;
-import javax.inject.Named;
+import javax.enterprise.context.Dependent;
 import javax.enterprise.context.RequestScoped;
+import javax.inject.Named;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
 
 @Named("daoImpl")
 @RequestScoped
-public class daoImpl extends dao implements Serializable{
+public class daoImpl extends dao<Usuario> implements Serializable{
 
     
 @PersistenceContext(unitName = "pruebaEJBPU")
